@@ -1,7 +1,8 @@
-//  Copyright 2019 Golubeva Anna
+// Copyright 2019 Golubeva Anna
+#include "../../../modules/task_1/golubeva_a_mismatched_items/mismatched_items.h"
 #include <mpi.h>
 #include <random>
-#include "./mismatched_items.h"
+#include <cstring>
 
 void getRandomStr(char *str, int size) {
   const char arr[] = "abcdefghijklmnopqrstuvwxyz0123456789";

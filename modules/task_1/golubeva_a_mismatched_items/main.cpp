@@ -2,7 +2,8 @@
 #include <gtest-mpi-listener.hpp>
 #include <gtest/gtest.h>
 #include <cstdlib>
-#include "./mismatched_items.h"
+#include <cstring>
+#include "../../../modules/task_1/golubeva_a_mismatched_items/mismatched_items.h"
 
 TEST(Count_Diff_Char_MPI, count_diff_char_in_same_size_str_even) {
   int rank;

@@ -18,7 +18,8 @@ int getCountDiffChar(char *str1, char *str2) {
   int size, rank;
   MPI_Comm_size(MPI_COMM_WORLD, &size);
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  int add, step, remainder;
+  int add, step;
+  int remainder;
   add = 0;
   if (strlen(str1) <= strlen(str2)) {
     step = strlen(str1) / size;

@@ -21,7 +21,8 @@ MPI_Comm createRingComm(MPI_Comm old, int size) {
 bool testRingTopology(MPI_Comm commRing) {
   if (!isRingTopology(commRing)) return false;
   int rank, size, source, dest;
-  int A, B;
+  int A;
+  int B;
   MPI_Status status;
   MPI_Comm_rank(commRing, &rank);
   MPI_Comm_size(commRing, &size);

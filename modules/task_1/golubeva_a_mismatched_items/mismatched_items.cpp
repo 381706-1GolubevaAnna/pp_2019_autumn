@@ -11,7 +11,7 @@ void getRandomStr(char *str, int size) {
   for (int i = 0; i < size; i++) {
     str[i] = arr[rand() % (sizeof(arr) - 1)];
   }
-  str[size] = 0;
+  str[size] = '\0';
 }
 
 int getCountDiffChar(char *str1, char *str2) {
@@ -44,21 +44,21 @@ int getCountDiffChar(char *str1, char *str2) {
   if (rank == 0) {
     delete[] strLocal1;
     delete[] strLocal2;
-    strLocal1 = new char[step + remainder + 1];
-    strLocal2 = new char[step + remainder + 1];
+    strLocal1 = new char[step + remainder];
+    strLocal2 = new char[step + remainder];
     for (int i = 0; i < step + remainder; i++) {
       strLocal1[i] = str1[i];
       strLocal2[i] = str2[i];
     }
-    strLocal1[step + remainder] = 0;
-    strLocal2[step + remainder] = 0;
+		strLocal1[step + remainder] = '\0';
+		strLocal2[step + remainder] = '\0';
   } else {
     MPI_Status status;
     if (step > 0) {
       MPI_Recv(&strLocal1[0], step, MPI_CHAR, 0, 0, MPI_COMM_WORLD, &status);
       MPI_Recv(&strLocal2[0], step, MPI_CHAR, 0, 1, MPI_COMM_WORLD, &status);
-      strLocal1[step] = 0;
-      strLocal2[step] = 0;
+			strLocal1[step] = '\0';
+		  strLocal2[step] = '\0';
     }
   }
   localResult = getCount(strLocal1, strLocal2);

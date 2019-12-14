@@ -4,9 +4,19 @@
 #include <cstdlib>
 #include <cstring>
 #include "../../../modules/task_2/golubeva_a_ring_topology/ring_topology.h"
+#include <ctime>
 
 TEST(Ring_Topology, Can_Create_Ring_Topology) {
+
+	//srand(time(0));
+	//clock_t start, end;
+	//double time;
+	//start = clock();
   MPI_Comm commRing = createRingComm(MPI_COMM_WORLD);
+	//end = clock();
+	//time = static_cast<double>(end) - static_cast<double>(start);
+	//time /= CLOCKS_PER_SEC;
+	//std::cout << time << "\n";
   ASSERT_TRUE(testRingTopology(commRing));
 }
 

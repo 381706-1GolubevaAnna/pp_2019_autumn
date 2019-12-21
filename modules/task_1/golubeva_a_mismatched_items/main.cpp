@@ -31,10 +31,10 @@ TEST(Count_Diff_Char_MPI, count_diff_char_in_same_size_str_odd) {
 }
 TEST(Count_Diff_Char_MPI, count_diff_char_in_diff_size_str) {
   int rank;
-  int expResult = 5;
+  int expResult = 8;
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  char str1[] = "sdaaa";
-  char str2[] = "sdggggg";
+  char str1[] = "sdaaaaaa";
+  char str2[] = "sdgggggggg";
   int countDiff;
   countDiff = getCountDiffChar(str1, str2);
   if (rank == 0) {
